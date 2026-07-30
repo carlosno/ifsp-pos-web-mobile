@@ -15,7 +15,7 @@ Móveis.
 [ Acessar disciplina ](./02-periodo/desenvolvimento-dispositivos-moveis)
 
 ### 🌐 Desenvolvimento para Internet I
-[ Acessar disciplina ](./02-periodo/desenvolvimento-para-internet)
+[ Acessar disciplina ](./02-periodo/desenvolvimento-para-internet-1)
 
 ---
 
