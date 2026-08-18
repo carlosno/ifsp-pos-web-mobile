@@ -1,0 +1,3 @@
+db["Plataforma_Ambiental"].find({bioma:"Cerrado"});
+db["Plataforma_Ambiental"].find({"trechos.monitoramentos.qualidade":"Boa"})
+db["Plataforma_Ambiental"].find({"trechos.especies.nome":"Espécie 1"});
