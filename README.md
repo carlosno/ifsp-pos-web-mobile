@@ -68,7 +68,7 @@ Projetos e atividades desenvolvidos durante a disciplina.
 
 ## 🛠️ Tecnologias
 
-* C++
+* C
 * Kotlin
 * Java
 * Android
