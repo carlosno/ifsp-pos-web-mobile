@@ -35,7 +35,7 @@ Projetos desenvolvidos em **C** durante a disciplina.
 
 ### 🗄️ Banco de Dados Relacional e NoSQL
 
-📁 [Banco Relacional e NoSQL](./banco-relacional-nosqle)
+📁 [Banco Relacional e NoSQL](./banco-relacional-nosql)
 
 Projeto comparando abordagens **SQL e NoSQL** utilizando um cenário de plataforma ambiental para armazenamento de informações sobre rios brasileiros e seus biomas.
 
