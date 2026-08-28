@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  background-color: #f4f4f4;
+}
+
+#menu {
+  background-color: #a7c5bd;
+  margin-top: 0cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-bottom: 0.5cm;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  padding-right: 2%;
+  padding-left: 2%;
+  color: black;
+  border-radius: 10px;
+  a:link,
+  a:visited {
+    background-color: #eb7b59;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  a:hover {
+    background-color: white;
+    color: #eb7b59;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+#conteudo {
+  background-color: grey;
+  margin-top: 1cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-bottom: 0.5cm;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+section {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.pares {
+  border: 3px solid #ffcc88;
+  background-color: #5599cc;
+}
+.calculadora {
+  border: 3px solid #5599cc;
+  background-color: #ffcc88;
+}
+.imc {
+  border: 3px solid #060f8d;
+  background-color: #cc88dd;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+input,
+select,
+button {
+  margin-bottom: 15px;
+}
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
