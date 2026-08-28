@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520">
+<rect width="1400" height="520" fill="#101820"/>
+<g fill="#f0ad00">
+<circle cx="170" cy="120" r="48"/><circle cx="310" cy="210" r="28"/><circle cx="180" cy="330" r="35"/>
+<circle cx="1180" cy="120" r="35"/><circle cx="1080" cy="250" r="55"/><circle cx="1230" cy="360" r="28"/>
+</g>
+<path d="M0 410 C180 280 330 500 520 390 S860 270 1030 390 S1240 480 1400 350" fill="none" stroke="#fff" stroke-width="7" opacity=".55"/>
+<text x="80" y="160" fill="#fff" font-size="58" font-family="Arial" font-weight="700">CONHECER PARA PRESERVAR</text>
+<text x="80" y="225" fill="#f0ad00" font-size="30" font-family="Arial">História, identidade e resistência</text>
+</svg>

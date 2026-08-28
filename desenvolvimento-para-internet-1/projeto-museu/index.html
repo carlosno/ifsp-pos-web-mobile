@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Memória, cultura e patrimônio do Candomblé em São Paulo.">
+  <title>Candomblé em São Paulo | Memória e Patrimônio</title>
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand font-weight-bold" href="#inicio">Memória Afro-SP</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#menu" aria-controls="menu" aria-expanded="false"
+              aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#inicio">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#historia">História</a>
+          </li>
+
+          <!-- DROPDOWN:  -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="DropMenu"
+               role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              Patrimônio
+            </a>
+            <div class="dropdown-menu" aria-labelledby="DropMenu">
+              <a class="dropdown-item" href="#terreiros">Terreiros reconhecidos</a>
+              <a class="dropdown-item" href="#memoria">Memória e resistência</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#fontes">Fontes</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#galeria">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Sobre o projeto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CARROSSEL -->
+    <div class="row area" id="inicio">
+      <div class="col-sm-12 p-0">
+        <div id="modelo" class="carousel slide" data-ride="carousel" data-interval="4500">
+          <ul class="carousel-indicators">
+            <li data-target="#modelo" data-slide-to="0" class="active"></li>
+            <li data-target="#modelo" data-slide-to="1"></li>
+            <li data-target="#modelo" data-slide-to="2"></li>
+          </ul>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/banner-1.svg" class="d-block w-100 img-fluid" alt="Banner sobre memória afro-brasileira em São Paulo">
+              <div class="carousel-caption">
+                <h1>Camdomblé em São Paulo</h1>
+                <p>Memória, cultura, território e patrimônio afro-brasileiro.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/banner-2.svg" class="d-block w-100 img-fluid" alt="Banner sobre terreiros e patrimônio cultural">
+              <div class="carousel-caption">
+                <h2>Terreiros como patrimônio vivo</h2>
+                <p>Espaços de memória, acolhimento, identidade e resistência.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/banner-3.svg" class="d-block w-100 img-fluid" alt="Banner sobre cultura afro-brasileira">
+              <div class="carousel-caption">
+                <h2>Conhecer para preservar</h2>
+                <p>Uma abordagem educativa sobre história e cultura afro-brasileira.</p>
+              </div>
+            </div>
+          </div>
+
+          <a class="carousel-control-prev" href="#modelo" data-slide="prev" aria-label="Anterior">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#modelo" data-slide="next" aria-label="Próximo">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO HOME -->
+    <div class="row area">
+      <div class="col-sm-12 bg-light py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="badge badge-pill badge-warning px-3 py-2">CULTURA AFRO-BRASILEIRA</span>
+            <h2 class="mt-3">Candomblé em São Paulo</h2>
+            <p class="lead">
+              Um recorte sobre a presença, a memória e o reconhecimento cultural
+              de comunidades de Candomblé no território paulista.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                  <h3 class="h5">História</h3>
+                  <p>
+                    O site apresenta uma linha do tempo com referências históricas
+                    de terreiros de Candomblé reconhecidos na cidade de São Paulo.
+                  </p>
+                  <a href="#historia" class="btn btn-dark">Ver história</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                  <h3 class="h5">Patrimônio</h3>
+                  <p>
+                    Em 2026, o CONPRESP reconheceu quatro importantes terreiros
+                    como referências culturais na capital paulista.
+                  </p>
+                  <a href="#terreiros" class="btn btn-dark">Conhecer</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                  <h3 class="h5">Respeito</h3>
+                  <p>
+                    O conteúdo tem finalidade educativa e evita expor informações
+                    internas ou reservadas das tradições religiosas.
+                  </p>
+                  <a href="#memoria" class="btn btn-dark">Saiba mais</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTÓRIA -->
+    <div class="row area" id="historia">
+      <div class="col-sm-12 bg-white py-5">
+        <div class="container">
+          <h2 class="section-title">Uma história construída no território</h2>
+          <p>
+            A presença do Candomblé em São Paulo faz parte da história das culturas
+            afro-brasileiras e de seus processos de continuidade, organização
+            comunitária e resistência.
+          </p>
+
+          <div class="timeline mt-4">
+            <div class="timeline-item">
+              <span class="timeline-year">1962</span>
+              <h3 class="h5">Terreiro de Candomblé Santa Bárbara</h3>
+              <p>
+                Segundo resolução do CONPRESP, foi um dos primeiros terreiros
+                abertos em São Paulo e o primeiro registrado em cartório como
+                terreiro de Candomblé.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-year">1966</span>
+              <h3 class="h5">Abassá Oxum Oxóssi</h3>
+              <p>
+                Fundado em Cangaíba, representa a preservação da tradição Angola
+                na cidade de São Paulo.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-year">1977 / 1983</span>
+              <h3 class="h5">Ilê Dara Asè Òsún Eyin</h3>
+              <p>
+                Fundado em 1977 por Pai Cido de Oxum Eyin, mantém sua sede no
+                Jardim Ivone, em Sapopemba, desde 1983.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TERREIROS -->
+    <div class="row area" id="terreiros">
+      <div class="col-sm-12 bg-light py-5">
+        <div class="container">
+          <h2 class="section-title">Terreiros e patrimônio cultural</h2>
+          <p class="mb-4">
+            Em maio de 2026, o CONPRESP aprovou o reconhecimento patrimonial de
+            quatro importantes terreiros de religiões de matriz africana na capital.
+          </p>
+
+          <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6 font-weight-bold">Santa Bárbara</h3>
+                  <p class="small mb-0">
+                    Brasilândia. Terreiro de tradição Angola e importante referência
+                    histórica do Candomblé paulistano.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6 font-weight-bold">Ilê Dara Asè Òsún Eyin</h3>
+                  <p class="small mb-0">
+                    Sapopemba. Referência cultural do Candomblé queto na cidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6 font-weight-bold">Abassá Oxum Oxóssi</h3>
+                  <p class="small mb-0">
+                    Cangaíba. Espaço ligado à preservação da tradição Angola.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6 font-weight-bold">Ilê Asé Omo Igbo Omi</h3>
+                  <p class="small mb-0">
+                    Ermelino Matarazzo. Reconhecido por sua preservação de elementos
+                    da tradição iorubá e atuação comunitária.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-dark mt-3">
+            <strong>Patrimônio vivo:</strong> o reconhecimento considera os terreiros
+            como espaços de acolhimento, preservação de memória, construção
+            identitária e resistência das culturas afro-brasileiras.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMÓRIA -->
+    <div class="row area" id="memoria">
+      <div class="col-sm-12 bg-dark text-light py-5">
+        <div class="container">
+          <h2 class="section-title">Memória, identidade e resistência</h2>
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <p>
+                Preservar a memória afro-brasileira significa reconhecer os saberes,
+                territórios e comunidades que contribuíram para a formação cultural
+                do Brasil.
+              </p>
+              <p>
+                Neste projeto, o Candomblé é apresentado como tema histórico e
+                cultural, com respeito à diversidade das tradições e às comunidades
+                que mantêm esses conhecimentos vivos.
+              </p>
+            </div>
+            <div class="col-md-5">
+              <div class="quote-box">
+                <p class="mb-0">
+                  “Conhecer a história também é uma forma de preservar a memória.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALERIA -->
+    <div class="row area" id="galeria">
+      <div class="col-sm-12 bg-light py-5">
+        <div class="container">
+          <h2 class="section-title">Galeria temática</h2>
+          <p>
+            As imagens do carrossel são ilustrações autorais criadas para a atividade,
+            evitando reproduzir espaços sagrados ou registros de rituais sem autorização.
+          </p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <img src="img/banner-1.svg" class="img-fluid rounded shadow-sm" alt="Ilustração temática de memória afro-brasileira">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="img/banner-2.svg" class="img-fluid rounded shadow-sm" alt="Ilustração temática de patrimônio cultural">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="img/banner-3.svg" class="img-fluid rounded shadow-sm" alt="Ilustração temática de cultura e memória">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FONTES -->
+    <div class="row area" id="fontes">
+      <div class="col-sm-12 bg-white py-5">
+        <div class="container">
+          <h2 class="section-title">Fontes consultadas</h2>
+          <ul>
+            <li>
+              Prefeitura de São Paulo / CONPRESP — resoluções e notícias sobre
+              patrimônio cultural.
+            </li>
+            <li>
+              Museu Afro Brasil Emanoel Araujo — acervo, história e programação
+              sobre culturas africanas e afro-brasileiras.
+            </li>
+          </ul>
+          <p class="small text-muted">
+            Projeto acadêmico. As informações devem ser conferidas nas fontes oficiais
+            antes de uma publicação pública definitiva.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="row area" id="contato">
+      <div class="col-sm-12 bg-dark text-light py-4">
+        <div class="container text-center">
+          <h2 class="h5">Memória Afro-SP</h2>
+          <p class="mb-1">Projeto acadêmico — Bootstrap</p>
+          <p class="small mb-0">
+            Tema: Candomblé e patrimônio cultural afro-brasileiro em São Paulo.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/jquery.js"></script>
+  <!-- popper tem que carregar antes-->
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    // Intervalo do carrossel definido com JavaScript
+    $('#modelo').carousel({
+      interval: 4500,
+      pause: 'hover'
+    });
+  </script>
+</body>
+</html>
