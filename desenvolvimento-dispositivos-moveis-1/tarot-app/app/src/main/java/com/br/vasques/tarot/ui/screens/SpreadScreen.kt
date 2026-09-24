@@ -16,6 +16,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -26,6 +27,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
@@ -42,7 +44,14 @@ import java.util.Locale
 fun SpreadScreen(vm: TarotViewModel) {
     val readings by vm.readings.collectAsState()
     val draft = vm.draft
+
+    // Estados da Inteligência Artificial
+    val aiText by vm.aiReadingText.collectAsState()
+    val isAiLoading by vm.isAiLoading.collectAsState()
+    var userQuestion by remember { mutableStateOf("") }
     var note by remember { mutableStateOf("") }
+
+    // Estados para Edição e Exclusão
     var editing by remember { mutableStateOf<Reading?>(null) }
     var readingToDelete by remember { mutableStateOf<Reading?>(null) }
 
@@ -71,6 +80,7 @@ fun SpreadScreen(vm: TarotViewModel) {
             Button(
                 onClick = {
                     note = ""
+                    userQuestion = ""
                     vm.drawSpread()
                 },
                 modifier = Modifier.fillMaxWidth()
@@ -79,7 +89,7 @@ fun SpreadScreen(vm: TarotViewModel) {
             }
         }
 
-        // Cartas sorteadas
+        // Cartas sorteadas e Interface da IA
         if (draft.isNotEmpty()) {
             item {
                 LazyRow(
@@ -98,6 +108,18 @@ fun SpreadScreen(vm: TarotViewModel) {
                 }
             }
 
+            // 1. Campo de Dúvida
+            item {
+                OutlinedTextField(
+                    value = userQuestion,
+                    onValueChange = { userQuestion = it },
+                    label = { Text("Qual a sua dúvida? (Opcional)") },
+                    placeholder = { Text("Ex: O que devo saber sobre a minha carreira?") },
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+
+            // 2. Campo de Anotação
             item {
                 OutlinedTextField(
                     value = note,
@@ -108,11 +130,53 @@ fun SpreadScreen(vm: TarotViewModel) {
                 )
             }
 
+            // 3. Botão de Interpretação
+            item {
+                Button(
+                    onClick = { vm.requestSpreadAiReading(userQuestion) },
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = !isAiLoading
+                ) {
+                    Text(if (isAiLoading) "Consultando os Astros..." else "✨ Interpretar Tiragem com IA")
+                }
+            }
+
+            // 4. Resultado da IA
+            if (isAiLoading) {
+                item {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        CircularProgressIndicator(modifier = Modifier.padding(16.dp))
+                    }
+                }
+            } else if (!aiText.isNullOrEmpty()) {
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.primaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    ) {
+                        Text(
+                            text = aiText!!,
+                            modifier = Modifier.padding(16.dp),
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontStyle = FontStyle.Italic
+                        )
+                    }
+                }
+            }
+
+            // 5. Botão de Salvar
             item {
                 Button(
                     onClick = {
                         vm.saveReading(note.trim())
                         note = ""
+                        userQuestion = ""
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -143,7 +207,7 @@ fun SpreadScreen(vm: TarotViewModel) {
                 ReadingItem(
                     reading = reading,
                     onEdit = { editing = reading },
-                    onDelete = { readingToDelete = reading }
+                    onDelete = { readingToDelete = reading } // Exclusão restaurada
                 )
             }
         }
@@ -161,7 +225,7 @@ fun SpreadScreen(vm: TarotViewModel) {
         )
     }
 
-    // Diálogo de Confirmação de Exclusão
+    // Diálogo de Confirmação de Exclusão (Restaurado)
     readingToDelete?.let { reading ->
         AlertDialog(
             onDismissRequest = { readingToDelete = null },
@@ -190,7 +254,7 @@ fun SpreadScreen(vm: TarotViewModel) {
 private fun ReadingItem(
     reading: Reading,
     onEdit: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit // Exclusão restaurada
 ) {
     val dateText = remember(reading.createdAt) {
         val format = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm", Locale("pt", "BR"))
@@ -223,7 +287,7 @@ private fun ReadingItem(
 
             if (reading.note.isNotBlank()) {
                 Text(
-                    text = "“${reading.note}”",
+                    text = reading.note,
                     fontStyle = FontStyle.Italic,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -237,6 +301,7 @@ private fun ReadingItem(
                 TextButton(onClick = onEdit) {
                     Text("Editar")
                 }
+                // Botão Excluir restaurado
                 TextButton(onClick = onDelete) {
                     Text("Excluir", color = MaterialTheme.colorScheme.error)
                 }

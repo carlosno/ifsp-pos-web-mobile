@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -39,7 +40,11 @@ fun TarotCardView(
     reversed: Boolean,
     modifier: Modifier = Modifier,
     label: String? = null,
-    showDescription: Boolean = true
+    showDescription: Boolean = true,
+    // Novos parâmetros para a IA
+    aiReadingText: String? = null,
+    isAiLoading: Boolean = false,
+    onAiReadingClick: (() -> Unit)? = null
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -130,6 +135,45 @@ fun TarotCardView(
                     style = MaterialTheme.typography.bodySmall,
                     textAlign = TextAlign.Center
                 )
+            }
+
+            // --- NOVA SEÇÃO DE INTELIGÊNCIA ARTIFICIAL ---
+
+            // Só exibe o botão se a função de clique for passada
+            if (onAiReadingClick != null) {
+                Spacer(Modifier.height(16.dp))
+
+                Button(
+                    onClick = onAiReadingClick,
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = !isAiLoading // Desativa o botão enquanto carrega
+                ) {
+                    Text(if (isAiLoading) "Consultando os Astros..." else "✨ Interpretar com IA")
+                }
+
+                // Caixa de carregamento ou exibição da resposta
+                if (isAiLoading) {
+                    Spacer(Modifier.height(12.dp))
+                    CircularProgressIndicator(modifier = Modifier.width(32.dp))
+                } else if (!aiReadingText.isNullOrEmpty()) {
+                    Spacer(Modifier.height(12.dp))
+
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.primaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    ) {
+                        Text(
+                            text = aiReadingText,
+                            modifier = Modifier.padding(16.dp),
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontStyle = FontStyle.Italic,
+                            textAlign = TextAlign.Start
+                        )
+                    }
+                }
             }
         }
     }

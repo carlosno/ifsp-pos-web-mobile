@@ -1,0 +1,26 @@
+# Modelos de IA e ficheiros pesados
+*.gguf
+*.bin
+*.tflite
+
+# Ficheiros de Build do Gradle
+build/
+.gradle/
+*/build/
+
+# Ficheiros locais do Android Studio
+local.properties
+.idea/
+*.iml
+*.iws
+
+# Ficheiros do Mac/Windows
+.DS_Store
+Thumbs.db
+
+# Ficheiros de Assinatura (Segurança)
+*.jks
+*.keystore
+
+# Logs
+*.log

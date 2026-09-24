@@ -80,7 +80,10 @@ class TarotRepository(private val context: Context) {
                 note = o.getString("note"),
                 cards = (0 until cardsJson.length()).map { j ->
                     val c = cardsJson.getJSONObject(j)
-                    SpreadCard(c.getInt("cardId"), c.getBoolean("reversed"))
+                    SpreadCard(
+                        cardId = c.getInt("cardId"),
+                        reversed = c.getBoolean("reversed")
+                    )
                 }
             )
         }
