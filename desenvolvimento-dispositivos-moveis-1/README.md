@@ -1,10 +1,18 @@
 # 🔮 Tarot App
 
 <div align="center">
-  <video src="https://github.com/carlosno/ifsp-pos-web-mobile/raw/main/desenvolvimento-dispositivos-moveis-1/demo.mp4" autoplay loop muted playsinline width="300"></video>
+  <img src="https://github.com/carlosno/ifsp-pos-web-mobile/raw/main/desenvolvimento-dispositivos-moveis-1/demo.gif" width="300" alt="Demonstração do Tarot App" />
 </div>
 
 Aplicativo mobile de leitura de cartas de Tarot, desenvolvido como **trabalho final** da disciplina de **Desenvolvimento para Dispositivos Móveis I**, integrante da Pós-Graduação em Desenvolvimento de Sistemas Web e Aplicativos Móveis do **Instituto Federal de São Paulo (IFSP) - Campus Capivari**.
+
+---
+
+## 📥 Download e Instalação
+
+Pode fazer download e testar o aplicativo diretamente no seu dispositivo Android através do link abaixo:
+
+🔗 **[Download APK do Tarot App](https://drive.google.com/file/d/1O8MqANbNXfv0SioM7mz2ZKrfoynk4Oop/view?usp=sharing)**
 
 ---
 
@@ -33,26 +41,36 @@ O projeto foi construído inteiramente no ecossistema Android moderno:
   > ⚠️ **Nota:** O arquivo do modelo `.gguf` não foi incluído na pasta `assets` deste repositório devido ao fato de ultrapassar o limite de tamanho de 100 MB permitido pelo GitHub.
 
 ### 📂 Estrutura de Diretórios
-A separação de responsabilidades (Separation of Concerns) foi aplicada dividindo o app em camadas:
+A separação de responsabilidades (Separation of Concerns) foi aplicada dividindo o app em pacotes específicos de dados e interface visual:
 
 ```plaintext
-tarot/
-├── MainActivity.kt          # Ponto de entrada do aplicativo
-├── ui/                      # Camada de Apresentação (UI)
-│   ├── TarotApp.kt          # Setup de navegação e estrutura do Compose
-│   ├── TarotViewModel.kt    # Lógica de apresentação e estado da UI
-│   ├── components/          # Widgets reutilizáveis (ex: TarotCardView.kt)
-│   ├── screens/             # Telas do aplicativo (CardsListScreen.kt, DailyCardScreen.kt, SpreadScreen.kt)
-│   └── theme/               # Configurações de tema, tipografia e cores (Color.kt, Theme.kt, Type.kt)
-├── data/                    # Camada de Dados
-│   ├── CardImage.kt         # Modelo para mapeamento das imagens das cartas
-│   ├── LlmLocalService      # Serviço de integração com o modelo de linguagem (LLM)
-│   ├── TarotDeck.kt         # Lógica e manipulação do baralho completo
-│   └── TarotRepository.kt   # Ponto único de acesso aos dados das cartas e histórico
-├── assets/                  # Arquivos estáticos
-│   └── gemma-3-270m-it...   # Modelo local de Inteligência Artificial
+com.br.vasques.tarot/
+├── data/                         # Camada de Dados e Lógica de Negócio
+│   ├── CardImage.kt              # Mapeamento das imagens
+│   ├── LlmLocalService           # Serviço de integração com o modelo de IA
+│   ├── TarotDeck.kt              # Lógica do baralho de Tarot
+│   └── TarotRepository.kt        # Repositório de acesso aos dados
+├── ui/                           # Camada de Apresentação (UI)
+│   ├── components/               
+│   │   └── TarotCardView.kt      # Componente visual reutilizável das cartas
+│   ├── screens/                  # Telas do aplicativo
+│   │   ├── CardsListScreen.kt    
+│   │   ├── DailyCardScreen.kt    
+│   │   └── SpreadScreen.kt       
+│   ├── theme/                    # Configurações de design e aparência
+│   │   ├── Color.kt              
+│   │   ├── Theme.kt              
+│   │   └── Type.kt               
+│   ├── TarotApp.kt               # Estrutura principal e navegação Compose
+│   └── TarotViewModel            # Gerenciamento de estado da UI
+├── MainActivity                  # Activity principal do aplicativo
+├── assets/                       # Arquivos estáticos e modelos
+│   └── gemma-3-270m-it-qat-Q4_0.gguf
 └── res/
-    └── drawable/            # Recursos gráficos
-        ├── ic_launcher...   # Ícones do aplicativo
-        ├── rws_00_fool.png  # Imagens das cartas do baralho (Domínio Público)
-        └── ...
+    └── drawable/                 # Recursos gráficos e imagens em domínio público
+        ├── ic_launcher_background.xml
+        ├── ic_launcher_foreground.xml
+        ├── rws_00_fool.png
+        ├── rws_01_magician.png
+        ├── rws_02_high_priestess.png
+        └── ... (demais cartas do baralho)
