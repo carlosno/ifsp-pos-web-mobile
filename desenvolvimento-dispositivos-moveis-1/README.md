@@ -1,7 +1,7 @@
 # 🔮 Tarot App
 
 <div align="center">
-  <img src="https://github.com/carlosno/ifsp-pos-web-mobile/raw/main/desenvolvimento-dispositivos-moveis-1/demo.gif" width="300" alt="Demonstração do Tarot App" />
+  <img src="https://github.com/carlosno/ifsp-pos-web-mobile/raw/main/desenvolvimento-dispositivos-moveis-1/demo.gif" width="600" alt="Demonstração do Tarot App" />
 </div>
 
 Aplicativo mobile de leitura de cartas de Tarot, desenvolvido como **trabalho final** da disciplina de **Desenvolvimento para Dispositivos Móveis I**, integrante da Pós-Graduação em Desenvolvimento de Sistemas Web e Aplicativos Móveis do **Instituto Federal de São Paulo (IFSP) - Campus Capivari**.
